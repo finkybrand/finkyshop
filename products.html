@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <link rel="shortcut icon" href="#">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart JS</title>
+    <link rel="stylesheet" href="products.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="app-container">
+        <div class="app-bg" width="100%">
+            <div class="left-side"></div>
+            <div class="right-side"></div>
+        </div>
+        <header>
+            <nav>
+                <ul>
+                    <li class="btn home">
+                        <a href="index.html">
+                            <img src="home.png" alt=""> Home</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="shopping-bag">
+                <a href="./cart.html">
+                    <img src="bag.png" alt="cart">
+                    Cart
+                    <div class="total-items-in-cart">
+                        0
+                    </div>
+                </a>
+            </div>
+        </header>
+        <main>     
+                <div class="model">
+                    <img class="model" src="model.png" alt="model">
+                    
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="products-list">
+        <div class="products">
+            <!-- render products here -->
+        </div>
+        <div class="cart">
+            <div class="cart-header">
+                <div class="column1">Item</div>
+                <div class="column2">Unit price</div>
+                <div class="column3">Units</div>
+            </div>
+            <div class="cart-items">
+                <!-- render cart items here -->
+            </div>
+            <div class="cart-footer">
+                <div class="subtotal">
+                    Subtotal (0 items): $0
+                </div>
+                <div class="checkout">
+                    Proceed to checkout
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const productsListEl = document.querySelector(".products-list");
+        const seeMoreBtn = document.querySelector(".see-more-btn");
+
+        seeMoreBtn.addEventListener('click', () => {
+            productsListEl.scrollIntoView({behavior: "smooth"})
+        })
+    </script>
+
+    <script src="./products.js" width="100%"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
