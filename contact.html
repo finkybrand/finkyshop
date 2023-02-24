@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact Us</title>
+	<style type="text/css">
+		a{
+			color: darkblue;
+			margin: 20px;
+		}
+
+		.Menu{
+    	width: 100%;
+    	height: 150px;
+         }
+
+     .Menu ul{
+     	list-style: none;
+         }
+
+     .Menu ul li{
+     	display: inline;
+     	font-size: 15px;
+     	line-height: 20px;
+     	margin: 0px;
+     	font-family: arial;
+         }
+
+     .Menu ul li a{
+     	color: white;
+     	text-decoration: none;
+     	padding: 15px;
+     }
+     
+     .Menu ul li a:hover{
+     background-color: red;
+     }
+
+    *{
+        margin: 0;
+		padding: 0;
+		box-sizing: 'poppins', sans-serif;
+	}
+	.container{
+		width: 100%;
+		height: 100vh;
+		background: #001660;
+        display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	form{
+		background: #fff;
+		display: flex;
+		flex-direction: column;
+		padding: 2vw 4vw;
+		width: 90%;
+		max-width: 600px;
+		border-radius: 10px;
+	}
+	form h3{
+		color: #555;
+		font-weight: 800;
+		margin-bottom: 20px;
+	}
+	form input, form textarea{
+            border: 0;
+			margin: 10px 0;
+			padding: 5%;
+			outline: none;
+			background: #f5f5f5;
+			font-size: 16px;
+	}
+	form button{
+		padding: 15px;
+		background: #ff5361;
+		color: #fff;
+		font-size: 18x;
+		border: 0;
+		outline: none;
+		cursor: pointer;
+		width: 150px;
+		margin: 20px auto 0;
+		border-radius: 30px;
+	}
+	</style>
+</head>
+
+<body style="background-image: url(16.gif);background-size: cover;background-attachment: fixed;width: 80%">
+	
+   <div class="Menu">
+	<ul>
+
+<li><a href="index.html">Home</a></li>
+<li><a href="products.html">Products</a></li>
+<li><a href="menu.html">MENU</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="contact.html">Contact Us</a></li>
+
+  </ul>
+</div>
+
+<div class="container">
+     <form onsubmit="sendEmail(); reset(); return false;">
+		<h3>GET IN TOUCH</h3>
+		<input type=" text" id="name" placeholder="Your name" required>
+		<input type=" email" id="email" placeholder="Email id" required>
+		<input type=" text" id="phone" placeholder="Phone no" required>
+		<textarea id="message" rows="4" placeholder="How can we help you?"></textarea>
+		<button type="submit">Send</button>
+	 </form>
+	</div> 
+
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
+	<script>
+		function sendEmail(){
+			Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "iyafiacre@gmail.com",
+    Password : "ECA02392209A8E2A2D58C4A2D36309769DEA",
+    To : 'iyamuremyefiacre@gmail.com',
+    From : document.getElementById("email").value,
+    Subject : "New Contact Form Enquiry",
+    Body : "Name: " + document.getElementById("name").value
+	              + "<br> Email: " + document.getElementById("email").value
+				  + "<br> Phone no: " + document.getElementById("phone").value
+				  + "<br> Message: " + document.getElementById("message").value
+  }).then(
+  message => alert("Message Sent Successfully")
+  );
+		}
+	</script>
+</body>
+</html>
