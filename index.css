@@ -169,7 +169,10 @@ nav{
 width: auto;
 padding: 0;
 }
-
+.header {
+    width:0;
+    padding: 0;
+    }
 .content form input{
 width: 0;
 padding: 0;
