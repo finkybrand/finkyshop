@@ -164,3 +164,14 @@ nav{
     display: block;
     margin: 25px 5px;
 }
+@media only screen and (max-width: 600px){
+• content form{ background: transparent;
+width: auto;
+padding: 0;
+}
+
+.content form input{
+width: 0;
+padding: 0;
+}
+}
