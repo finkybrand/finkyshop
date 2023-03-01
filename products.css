@@ -216,7 +216,7 @@ main .model {
 
   display: grid;
   grid-template-rows: 500, 500fr;
-  grid-template-columns: repeat(4, 4fr);
+  grid-template-columns: repeat(2, 2fr);
 display: inline-grid;
 margin-top: -500px;
 }
