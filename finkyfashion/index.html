@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Finky Fashion</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="navbar">
+            <div class="logo">
+                <img src="lego.jpeg" alt="">
+            </div>
+              <nav>
+                <ul>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Collection</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+              </nav>
+              <div class="user">
+                <p>Iyamuremye Fiacre</p>
+                <img src="user1.jpg">
+              </div>
+             </div>
+
+              <div class="sidebar">
+                <img src="search.png" class="search-icon">
+                <div class="social-links">
+                <img src="fb.png">
+                <img src="pt.png">
+                <img src="tw.png">
+                </div>
+                <img src="info.png" class="info-icon">
+              </div>
+            <div class="msg-container">
+                <div id="slider">
+                    <div class="msg-col">
+                        <h1>Trending</h1>
+                        <p>Unleash Your Style with our brand F|F 
+                            as you step into your unique self and 
+                            express your inner style with our premium 
+                            quality clothes that will make you look confident,
+                          comfortable and empowered.</p>
+                            <a href="">Learn More</a>
+                    </div>
+                    <div class="msg-col">
+                      <h1>Now</h1>
+                      <p>We believe that Fashion is not just what we wear, 
+                        but a reflection of who you are and what you stand for.</p>
+                          <a href="">Learn More</a>
+                  </div>
+                  <div class="msg-col">
+                    <h1>NEW STYLE</h1>
+                    <p>We ensure that our clothes are not only Fashionable 
+                      but also durable and  long lasting.</p>
+                        <a href="">Learn More</a>
+                </div>
+                <div class="msg-col">
+                  <h1>Popular</h1>
+                  <p>At our brand, we believe Fashion can be a force for good
+                     where everyone deserves to feel beautiful and stylish, no matter
+                     their size,shape or background.</p>
+                      <a href="">Learn More</a>
+              </div>
+                </div>
+            </div>
+
+           <div class="controller">
+            <div id="line1"></div>
+            <div id="line2"></div>
+            <div id="line3"></div>
+            <div id="line4"></div>
+            <div id="active"></div>
+           </div>
+    </div>
+    
+
+    <script>
+
+    var slider = document.getElementById('slider');
+    var active = document.getElementById('active');
+    var line1 = document.getElementById('line1');
+    var line2 = document.getElementById('line2');
+    var line3 = document.getElementById('line3');
+    var line4 = document.getElementById('line4');
+    
+       line1.onclick = function(){
+        slider.style.transform = 'translateX(0)';
+        active.style.top = '0px';
+       }
+       line2.onclick = function(){
+        slider.style.transform = 'translateX(-25%)';
+        active.style.top = '80px';
+       }
+       line3.onclick = function(){
+        slider.style.transform = 'translateX(-50%)';
+        active.style.top = '160px';
+       }
+       line4.onclick = function(){
+        slider.style.transform = 'translateX(-75%)';
+        active.style.top = '240px';
+       }
+
+    </script>
+
+</body>
+</html>
