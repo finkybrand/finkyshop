@@ -4,16 +4,6 @@
     font-family: "poppins", sans-serif;
     box-sizing: border-box;
 }
-body{
-    display: flex;
-    flex-direction: column;
-    max-width: 1440px;
-    margin: 0 auto;
-    height: 100vh;
-    flex: 1;
-    overflow: scroll;
-}
-
 .header{
     height: 100vh;
     width: 100%;
