@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/bootstrap.min.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <title>Finky Store</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="header">
+        <div class="header-bottom sticky-header">
+          <div class="container">
+            <div class="header-left">
+              <button class="mobile-menu-toggler">
+                <span class="sr-only">Toggle mobile menu</span>
+                <i class="fa fa-bars"></i>
+              </button>
+              <h1>Finky Store</h1>
+            </div>
+            <div class="header-center">
+              <nav class="main-nav">
+                <ul class="menu sf-arrows">
+                  <li class="megamenu-container">
+                    <a href="index.html">Home</a>
+                  </li>
+                  <li>
+                    <a href="about.html">About</a>
+                  </li>
+                  <li>
+                    <a href="contact.html">Contact</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="container py-4">
+            <div class="d-flex justify-content-center">
+                <div class="col-lg-8">
+        <form  method="POST">
+        <div class="row">
+            <div class="col-12">
+                <h2>Pay amount of RWF <span id="amount"></span> to complete your order</h2>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <h2>Name</h2>
+                    <input type="text" id="name" style="font-size: 18px;"
+                        class="form-control form-control-submit"
+                        placeholder="Your Full name" required>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <h2>Email</h2>
+                    <input type="email" id="email" style="font-size: 18px;"
+                        class="form-control form-control-submit"
+                        placeholder="youremail@example.com "required>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="form-group">
+                    <h2>Phone</h2><br>
+                    <input type="phone" id="phone" placeholder="+250788123456" style="font-size: 18px;"
+                        class="form-control form-control-submit"required>
+                </div>
+            </div>
+            <div class="col-md-12">
+            <div class="d-flex ">
+            <input type="checkbox" id="register-policy" required> <h2> I agree to the<a href="#">Terms<a href="#"> and Privacy Policy</a> *</h2></div>
+</div>
+<button type="button" id="pay" class="btn btn-primary w-100">
+    <span>PAY</span>
+</button>
+</div>  
+        </div>
+    </form>
+            </div>	
+            </div>
+        </div>
+      </main>
+
+      <footer class="footer footer-2">
+        <div class="footer-bottom">
+          <div class="container">
+            <p class="footer-copyright">
+              Copyright © 2023 Finky Store. All Rights Reserved.
+            </p>
+            <ul class="footer-menu">
+              <li><a href="#">Terms Of Use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="mobile-menu-overlay"></div>
+
+    <div class="mobile-menu-container">
+      <div class="mobile-menu-wrapper">
+        <span class="mobile-menu-close"><i class="icon-close"></i></span>
+
+        <nav class="mobile-nav">
+          <ul class="mobile-menu">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="about.html">About</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <script src="https://checkout.flutterwave.com/v3.js"></script>
+    <script>
+        var amount = localStorage.getItem("amount");
+        $("#amount").append(amount);
+
+        $("#pay").click(function (e) { 
+            e.preventDefault();
+            var phone=$("#phone").val();
+            var name=$("#name").val();
+            var email=$("#email").val();
+            let external_id = (Math.random() + 1).toString(36).substring(7);
+            if (phone.length!=13) {alert("Phone must be 13 ")}
+            FlutterwaveCheckout({
+      public_key: "FLWPUBK-f7f341565068c0a24fae2885ebb28610-X",
+      tx_ref: external_id,
+      amount: amount,
+      currency: "RWF",
+      payment_options: "mobilemoneyrwanda",
+      customer: {
+        email: email,
+        phone_number: phone,
+        name:name,
+      },
+      customizations: {
+        title: "Finky Store Pay",
+      },
+      callback: function(payment) {
+       if (payment.status=="successful") {
+        alert(payment.status)
+       window.location.href = "index.html";
+       }else{
+        window.location.href = "index.html";
+       } 
+     }
+    });
+        });
+    </script>
+  </body>
+</html>
