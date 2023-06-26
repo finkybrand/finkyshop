@@ -26,7 +26,7 @@ var ShoppingCart = (function($) {
       name: "coffee",
       description: "Coffee aroma descriptors include flowery, nutty, smoky, and herby.",
       imageUrl: "t1.png",
-      price: 4000,
+      price: 500,
     },
     {
       id: 2,
