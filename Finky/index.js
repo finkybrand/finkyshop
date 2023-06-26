@@ -40,7 +40,7 @@ var ShoppingCart = (function($) {
       name: "Baking flour",
       description: "From bread to biscuits, cookies to cakes, baking is the art of turning flour into delicious food.",
       imageUrl: "t3.png",
-      price: 2000,
+      price: 500,
     },
     {
       id: 4,
